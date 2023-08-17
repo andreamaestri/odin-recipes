@@ -3,48 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+ /* Additional CSS for the fixed transparent navbar */
+ .navbar.is-fixed-top {
+            background-color: transparent;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            
+        }
+        .navbar.is-fixed-top.scrolled {
+            background-color: rgba(46, 44, 44, 0.8);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adjust the shadow on scroll */
+        }
+        .navbar.is-fixed-top.scrolled .navbar-start,
+        .navbar.is-fixed-top.scrolled .title,
+        .navbar.is-fixed-top.scrolled .navbar-link {
+            color: hsl(171, 100%, 41%)
+        }
+        .navbar.has-hovered .navbar-link {
+            color: rgb(29, 29, 29);
+        }
+
+        .navbar-dropdown.has-background-dark .navbar-item:hover {
+            color: #000; /* Change to the desired dark color */
+        }
+
+        .navbar-item.is-active, .navbar-item.is-active:hover {
+            background-color: #7d7d7d39; /* Change to the desired background color */
+        }
+        .hero-container {
+            position: relative; /* Ensure the hero container has a relative position */
+            z-index: 1; /* Bring the hero container content above the gradient overlay */
+        }
+        .hero.is-primary {
+            background-position: top center;
+            background-size: cover;
+            height: 100vh; /* Set hero height to viewport height */ 
+            box-shadow: 0px 35px 125px rgba(0, 0, 0, 0.125); /* Add a soft shadow */
+            position: relative; /* Add position relative for overlay */
+        }
+        .title,
+        .subtitle {
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05); /* Add a soft shadow to the title and subtitle */
+        }
+        .hero-body {
+            padding-top: 0; /* Remove the top padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45)); /* Vertical fade gradient */
+            z-index: 0;
+        }
+            @media screen and (min-width: 1024px) {
+            .hero-container .navbar.is-fixed-top.scrolled {
+                box-shadow: none;
+        }
+        .navbar-link:hover, .navbar-link.is-active, .navbar-link:focus {
+            background-color: #00000011;
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+        }
+        .navbar-dropdown-arrow {
+            color: hsl(171, 100%, 41%);
+        }
+        .navbar-dropdown-background-color {
+            background-color: #70707020;
+        }
+        .hero.is-bottom-anchored {
+            display: flex;
+            align-items: flex-end;
+            min-height: 100vh; /* Ensure the hero covers the viewport */
+            padding-bottom: 3rem; /* Add bottom padding for space */
+        }
+    }
+    </style>
     <title>Chicken Stir-Fry</title>
 </head>
 <body>
-    <h1>Chicken Stir-Fry</h1>
-    <a data-flickr-embed="true" href="https://www.flickr.com/photos/10376559@N06/3679334267" title="chicken stir fry"><img src="https://live.staticflickr.com/2432/3679334267_8467680c08_o.jpg" width="714" height="536" alt="chicken stir fry"/></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-    <h2>Description</h2>
-    <p>Whip up a quick and nutritious chicken stir-fry packed with colorful vegetables and tender chicken strips. This stir-fry recipe is not only delicious but also a breeze to make!</p>
-    <p><em>Experience the flavors of Asia with this <b>savory</b> chicken stir-fry recipe!</em></p>
-    <br></br>
-    <h2>Ingredients</h2>
-    <ul>
-        <li>1 pound boneless, skinless chicken breasts, sliced</li>
-        <li>2 cups mixed vegetables (bell peppers, broccoli, carrots, snap peas), sliced</li>
-        <li>3 tablespoons soy sauce</li>
-        <li>2 tablespoons oyster sauce</li>
-        <li>1 tablespoon hoisin sauce</li>
-        <li>1 teaspoon sesame oil</li>
-        <li>2 cloves garlic, minced</li>
-        <li>1 teaspoon fresh ginger, grated</li>
-        <li>2 tablespoons vegetable oil</li>
-        <li>Salt and pepper to taste</li>
-    </ul>
-    <br></br>
-    <h2>Steps</h2>
-    <ol>
-        <li>In a small bowl, whisk together the soy sauce, oyster sauce, hoisin sauce, and sesame oil to make the sauce. Set aside.</li>
-        <li>Heat vegetable oil in a large skillet or wok over high heat.</li>
-        <li>Add the sliced chicken and stir-fry until cooked through and no longer pink. Remove the chicken from the skillet and set aside.</li>
-        <li>In the same skillet, add a bit more oil if needed. Add the minced garlic and grated ginger. Stir-fry for about 30 seconds until fragrant.</li>
-        <li>Add the mixed vegetables to the skillet and stir-fry until they are tender yet crisp.</li>
-        <li>Return the cooked chicken to the skillet and pour the sauce over the chicken and vegetables.</li>
-        <li>Toss everything together until well coated in the sauce and heated through.</li>
-        <li>Season with salt and pepper to taste.</li>
-        <li>Serve the chicken stir-fry over cooked rice or noodles.</li>
-    </ol>
-    <br></br>
-<h2>Hungry for more?</h2>
-<ul>
-    <li><a href="./lasagna.html">Lasagna</a></li>
-    <li><a href="./greek-salad.html">Greek Salad</a></li>
-    <li><a href="./cookies.html">Chocolate Chip Cookies</a></li>
-    <li><a href="./pizza.html">Pizza</a></li>
-</ul>
-</body>
-</html>
+    <nav class="navbar is-fixed-top is-spaced is-primary is-trasparent">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../index.html">
+                <h1 class="title">Odin Recipes</h1>
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link is-arrowless">
+                        <div style="font-size: 1.25rem;">
+                        Recipes 
+                        <i class="fa fa-chevron-down fa-fw"></i>
+                        </div>
+                    </a>
+                    <div class="navbar-dropdown is-boxed is-spaced has-shadows">
+                        <a class="navbar-item" href="./lasagna.html">
+                            <span class="icon"><i class="fas fa-pizza-slice"></i></span> Lasagna
+                        </a>
+                        <a class="navbar-item" href="./greek-salad.html">
+                            <span class="icon"><i class="fas fa-leaf"></i></span> Greek Salad
+                        </a>
+                        <a class="navbar-item" href="./cookies.html">
+                            <span class="icon"><i class="fas fa-cookie"></i></span> Chocolate Chip Cookies
+                        </a>
+                        <a class="navbar-item" href="./pizza.html">
+                            <span class="icon"><i class="fas fa-pizza-slice"></i></span> Pizza
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="hero is-primary is-bold is-bottom-anchored" style="background-image: url('https://live.staticflickr.com/2432/3679334267_8467680c08_o.jpg');">
+            <div class="gradient-overlay"></div>
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <h1 class="title is-1 mt-6">Chicken Stir-Fry</h1>
+                            <p class="subtitle is-3">Whip up a quick and nutritious meal</p>
+                            <div class="tags are-large">
+                                <span class="tag is-primary">Asian</span>
+                                <span class="tag is-primary">Stir-Fry</span>
+                                <span class="tag is-primary">Chicken</span>
+                                <span class="tag is-primary">Vegetables</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </section>
+    <section class="hero is-small">
+        <section class="hero is-small">
+            <div class="hero-body">
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="#"><span class="icon"><i class="fas fa-home"></i></span> Home</a></li>
+                        <li><a href="#"><span class="icon"><i class="fas fa-utensils"></i></span> Recipes</a></li>
+                        <li class="is-active"><a href="#" aria-current="page"><span class="icon"><i class="fas fa-drumstick-bite"></i></span> Chicken Stir-Fry</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        
+    </section>
+    <div class="container mt-5">
+        <div class="content">
+            <h2 class="subtitle">Description</h2>
+            <p>Whip up a quick and nutritious chicken stir-fry packed with colorful vegetables and tender chicken strips. This stir-fry recipe is not only delicious but also a breeze to make!</p>
+            <p><em>Experience the flavors of Asia with this <b>savory</b> chicken stir-fry recipe!</em></p>
+        </div>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Chicken Stir-Fry Recipe</h1>
+                <p><em>Transform your kitchen into an Asian culinary adventure!</em><strong> A quick and easy recipe that will tantalize your taste buds, ready in <em>less than 30 minutes</em>.</strong></p>
+            </div>
+            <br></br>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-12">
+                    <article class="tile is-child notification box is-info">
+                        <div class="section">
+                            <div class="content">
+                                <h2 class="subtitle">Ingredients</h2>
+                                <ul>
+                                    <li>1 pound boneless, skinless chicken breasts, sliced</li>
+                                    <li>2 cups mixed vegetables (bell peppers, broccoli, carrots, snap peas), sliced</li>
+                                    <li>3 tablespoons soy sauce</li>
+                                    <li>2 tablespoons oyster sauce</li>
+                                    <li>1 tablespoon hoisin sauce</li>
+                                    <li>1 teaspoon sesame oil</li>
+                                    <li>2 cloves garlic, minced</li>
+                                    <li>1 teaspoon fresh ginger, grated</li>
+                                    <li>2 tablespoons vegetable oil</li>
+                                    <li>Salt and pepper to taste</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tile is-child is-8 box">
+                        <div class="section">
+                            <h2 class="subtitle">Steps</h2>
+                            <ol>
+                                <li>In a small bowl, whisk together the soy sauce, oyster sauce, hoisin sauce, and sesame oil to make the sauce. Set aside.</li>
+                                <li>Heat vegetable oil in a large skillet or wok over high heat.</li>
+                                <li>Add the sliced chicken and stir-fry until cooked through and no longer pink. Remove the chicken from the skillet and set aside.</li>
+                                <li>In the same skillet, add a bit more oil if needed. Add the minced garlic and grated ginger. Stir-fry for about 30 seconds until fragrant.</li>
+                                <li>Add the mixed vegetables to the skillet and stir-fry until they are tender yet crisp.</li>
+                                <li>Return the cooked chicken to the skillet and pour the sauce over the chicken and vegetables.</li>
+                                <li>Toss everything together until well coated in the sauce and heated through.</li>
+                                <li>Season with salt and pepper to taste.</li>
+                                <li>Serve the chicken stir-fry over cooked rice or noodles.</li>
+                            </ol>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="subtitle">Hungry for more?</h2>
+                <ul>
+                    <li><a href="./lasagna.html"><span class="icon"><i class="fas fa-pizza-slice"></i></span> Lasagna</a></li>
+                    <li><a href="./greek-salad.html"><span class="icon"><i class="fas fa-leaf"></i></span> Greek Salad</a></li>
+                    <li><a href="./cookies.html"><span class="icon"><i class="fas fa-cookie"></i></span> Chocolate Chip Cookies</a></li>
+                    <li><a href="./pizza.html"><span class="icon"><i class="fas fa-pizza-slice"></i></span> Pizza</a></li>
+                </ul>
+            </div>
+        </section>
+        <script>
+            // JavaScript for the dropdown menu
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get the "navbar-burger" element
+                const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+                if ($navbarBurgers.length > 0) {
+                    $navbarBurgers.forEach(el => {
+                        el.addEventListener('click', () => {
+                            const target = el.dataset.target;
+                            const $target = document.getElementById(target);
+                            el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+                        });
+                    });
+                }
+        
+                // Change navbar color on scroll
+                const navbar = document.querySelector('.navbar');
+                const hero = document.querySelector('.hero');
+        
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.scrollY;
+        
+                    if (scrollPosition > hero.offsetHeight) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            });
+        </script>
+        <script>
+            // JavaScript for the navbar background change on scroll
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+    <footer class="footer is-fullwidth ">
+        <div class="columns">
+            <div class="column"> <a href="https://bulma.io">
+            <img
+              src="https://bulma.io/images/made-with-bulma.png"
+              alt="Made with Bulma"
+              width="256"
+              height="48">
+          </a></div>
+        <div class="column is-5 is-offset-5">
+            <p>&copy; 2023 Odin Recipes & Andrea Maestri. All rights reserved.</p>
+            <p>Styled with <a href="https://bulma.io">Bulma</a> and powered by <a href="https://github.com/features/copilot">GitHub Copilot</a>.</p>
+        </div>
+    </footer>
+    </body>
+    </html>

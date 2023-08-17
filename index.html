@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <title>Home</title>
 </head>
 <body>
-    <h1>Welcome to Odin Recipes!</h1>
-    <a href="./recipes/lasagna.html">Lasagna</a>
-    <a href="./recipes/chicken-stir-fry.html">Chicken Stir-Fry</a>
-    <a href="./recipes/greek-salad.html">Greek Salad</a>
-    <a href="./recipes/cookies.html">Chocolate Chip Cookies</a>
-    <a href="./recipes/pizza.html">Pizza</a>
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Welcome to Odin Recipes!</h1>
+                <img src="https://i.pinimg.com/originals/02/19/94/021994730e3456ec854d94c4d55a365c.gif" width="1024" height="auto" frameBorder="0" ></img>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container has-text-centered mt-5">
+        <div class="columns is-multiline">
+            <div class="column is-one-third">
+                <a href="./recipes/lasagna.html" class="button is-primary is-fullwidth">
+                    <span class="icon is-large"><i class="fas fa-utensils"></i></span>
+                    <span class="is-size-5">Lasagna</span>
+                </a>
+            </div>
+            <div class="column is-one-third">
+                <a href="./recipes/chicken-stir-fry.html" class="button is-primary is-fullwidth">
+                    <span class="icon is-large"><i class="fas fa-drumstick-bite"></i></span>
+                    <span class="is-size-5">Chicken Stir-Fry</span>
+                </a>
+            </div>
+            <div class="column is-one-third">
+                <a href="./recipes/greek-salad.html" class="button is-primary is-fullwidth">
+                    <span class="icon is-large"><i class="fas fa-leaf"></i></span>
+                    <span class="is-size-5">Greek Salad</span>
+                </a>
+            </div>
+            <div class="column is-one-third">
+                <a href="./recipes/cookies.html" class="button is-primary is-fullwidth">
+                    <span class="icon is-large"><i class="fas fa-cookie"></i></span>
+                    <span class="is-size-5">Chocolate Chip Cookies</span>
+                </a>
+            </div>
+            <div class="column is-one-third">
+                <a href="./recipes/pizza.html" class="button is-primary is-fullwidth">
+                    <span class="icon is-large"><i class="fas fa-pizza-slice"></i></span>
+                    <span class="is-size-5">Pizza</span>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

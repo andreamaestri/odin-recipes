@@ -3,54 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <title>Lasagna</title>
+    <style>
+     /* Additional CSS for the fixed transparent navbar */
+     .navbar.is-fixed-top {
+            background-color: transparent;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            
+        }
+        .navbar.is-fixed-top.scrolled {
+            background-color: rgba(46, 44, 44, 0.8);
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adjust the shadow on scroll */
+        }
+        .navbar.is-fixed-top.scrolled .navbar-start,
+        .navbar.is-fixed-top.scrolled .title,
+        .navbar.is-fixed-top.scrolled .navbar-link {
+            color: hsl(171, 100%, 41%)
+        }
+        .navbar.has-hovered .navbar-link {
+            color: rgb(29, 29, 29);
+        }
+
+        .navbar-dropdown.has-background-dark .navbar-item:hover {
+            color: #000; /* Change to the desired dark color */
+        }
+
+        .navbar-item.is-active, .navbar-item.is-active:hover {
+            background-color: #7d7d7d39; /* Change to the desired background color */
+        }
+        .hero-container {
+            position: relative; /* Ensure the hero container has a relative position */
+            z-index: 1; /* Bring the hero container content above the gradient overlay */
+        }
+        .hero.is-primary {
+            background-position: top center;
+            background-size: cover;
+            height: 100vh; /* Set hero height to viewport height */ 
+            box-shadow: 0px 35px 125px rgba(0, 0, 0, 0.125); /* Add a soft shadow */
+            position: relative; /* Add position relative for overlay */
+        }
+        .title,
+        .subtitle {
+            text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05); /* Add a soft shadow to the title and subtitle */
+        }
+        .hero-body {
+            padding-top: 0; /* Remove the top padding */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            height: 100%;
+        }
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45)); /* Vertical fade gradient */
+            z-index: 0;
+        }
+            @media screen and (min-width: 1024px) {
+            .hero-container .navbar.is-fixed-top.scrolled {
+                box-shadow: none;
+        }
+        .navbar-link:hover, .navbar-link.is-active, .navbar-link:focus {
+            background-color: #00000011;
+            -webkit-backdrop-filter: blur(3px);
+            backdrop-filter: blur(3px);
+        }
+        .navbar-dropdown-arrow {
+            color: hsl(171, 100%, 41%);
+        }
+        .navbar-dropdown-background-color {
+            background-color: #70707020;
+        }
+        .hero.is-bottom-anchored {
+            display: flex;
+            align-items: flex-end;
+            min-height: 100vh; /* Ensure the hero covers the viewport */
+            padding-bottom: 3rem; /* Add bottom padding for space */
+        }
+    }
+    </style>
 </head>
 <body>
-    <h1>Lasagna</h1>
-    <img src="../img/lasagna.jpeg" alt="Lasagna">
-    <h2>Description</h2>
-    <p>Lasagne are a type of wide, flat pasta, possibly one of the oldest types of pasta. Lasagne, or the singular lasagna, is also an Italian dish made of stacked layers of this flat pasta alternating with fillings such as ragù (ground meats and tomato sauce) and other vegetables, cheese (which may include ricotta and parmesan), and seasonings and spices such as garlic, oregano and basil.</p> <p>This dish may be topped with melted grated mozzarella cheese. Typically, the cooked pasta is assembled with the other ingredients and then baked in an oven. The resulting lasagne casserole is cut into single-serving square portions.</p>
-    <p><em>Feel like you just been invited from an authentic <b>Nonna</b> in her casa!</em><strong> A cosy and easy receipe for your palate, with an simple oven and store bought lasagna sheets, you can make in <em>less than 2 hours</em> this recipe.</strong></p>
-    <br></br>
-    <h2>Ingredients</h2>
-        <ul>
-            <li>1 pound sweet Italian sausage</li>
-            <li>3/4 pound lean ground beef</li>
-            <li>1/2 cup minced onion</li>
-            <li>2 cloves garlic, crushed</li>
-            <li>1 (28 ounce) can crushed tomatoes</li>
-            <li>2 (6 ounce) cans tomato paste</li>
-            <li>2 (6.5 ounce) cans canned tomato sauce</li>
-            <li>1/2 cup water</li>
-            <li>2 tablespoons white sugar</li>
-            <li>1 1/2 teaspoons dried basil leaves</li>
-            <li>1/2 teaspoon fennel seeds</li>
-            <li>1 teaspoon Italian seasoning</li>
-            <li>1 1/2 teaspoons salt, divided, or to taste</li>
-            <li>1/4 teaspoon ground black pepper</li>
-            <li>4 tablespoons chopped fresh parsley</li>
-            <li>12 lasagna noodles</li>
-            <li>16 ounces ricotta cheese</li>
-            <li>1 egg</li>
-            <li>3/4 pound mozzarella cheese, sliced</li>
-            <li>3/4 cup grated Parmesan cheese</li>
-        </ul>
-        <br></br>
-    <h2>Steps</h2>
-    <ol>
-        <li>In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.</li>
-        <li>Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.</li>
-        <li>Preheat oven to 375 degrees F (190 degrees C).</li>
-        <li>To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13 inch baking dish. Arrange 6 noodles lengthwise over meat sauce. Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices. Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese. Repeat layers, and top with remaining mozzarella and Parmesan cheese. Cover with foil: to prevent sticking, either spray foil with cooking spray, or make sure the foil does not touch the cheese.</li>
-        <li>Bake in preheated oven for 25 minutes. Remove foil, and bake an additional 25 minutes. Cool for 15 minutes before serving.</li>
-    </ol>
-    <br></br>
-<h2>Hungry for more?</h2>
-<ul>
-    <li><a href="./chicken-stir-fry.html">Chicken Stir-Fry</a></li>
-    <li><a href="./greek-salad.html">Greek Salad</a></li>
-    <li><a href="./cookies.html">Chocolate Chip Cookies</a></li>
-    <li><a href="./pizza.html">Pizza</a></li>
-</ul>
-</body>
-</html>
+        <nav class="navbar is-fixed-top is-spaced is-primary is-trasparent">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="../index.html">
+                    <h1 class="title">Odin Recipes</h1>
+                </a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link is-arrowless">
+                            <div style="font-size: 1.25rem;">
+                            Recipes 
+                            <i class="fa fa-chevron-down fa-fw"></i>
+                            </div>
+                        </a>
+                        
+                        <div class="navbar-dropdown is-boxed is-spaced has-shadows">
+                            <a class="navbar-item" href="./chicken-stir-fry.html">
+                                <span class="icon"><i class="fas fa-drumstick-bite"></i></span> Chicken Stir-Fry
+                            </a>
+                            <a class="navbar-item" href="./greek-salad.html">
+                                <span class="icon"><i class="fas fa-leaf"></i></span> Greek Salad
+                            </a>
+                            <a class="navbar-item" href="./cookies.html">
+                                <span class="icon"><i class="fas fa-cookie"></i></span> Chocolate Chip Cookies
+                            </a>
+                            <a class="navbar-item" href="./pizza.html">
+                                <span class="icon"><i class="fas fa-pizza-slice"></i></span> Pizza
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="hero is-primary is-bold is-bottom-anchored" style="background-image: url('../img/lasagna.jpeg');">
+            <div class="gradient-overlay"></div>
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <h1 class="title is-1 mt-6">Lasagna</h1>
+                        <p class="subtitle is-3">A classic Italian dish</p>
+                            <div class="tags are-large">
+                                <span class="tag is-primary">Italian</span>
+                                <span class="tag is-primary">Pasta</span>
+                                <span class="tag is-primary">Baked</span>
+                                <span class="tag is-primary">Meat</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="hero is-small">
+            <div class="hero-body">
+           
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+            <ul>
+                <li><a href="#"><span class="icon"><i class="fas fa-home"></i></span> Home</a></li>
+                <li><a href="#"><span class="icon"><i class="fas fa-utensils"></i></span> Recipes</a></li>
+                <li class="is-active"><a href="#" aria-current="page"><span class="icon"><i class="fas fa-pizza-slice"></i></span> Lasagna</a></li>
+            </ul>
+        </nav>  
+    </div>
+        </section>
+    
+    <div class="container mt-5">
+        <div class="content">
+            <h2 class="subtitle">Description</h2>
+            <p>Lasagne are a type of wide, flat pasta, possibly one of the oldest types of pasta. Lasagne, or the singular lasagna, is also an Italian dish made of stacked layers of this flat pasta alternating with fillings such as ragù (ground meats and tomato sauce) and other vegetables, cheese (which may include ricotta and parmesan), and seasonings and spices such as garlic, oregano and basil.</p> <p>This dish may be topped with melted grated mozzarella cheese. Typically, the cooked pasta is assembled with the other ingredients and then baked in an oven. The resulting lasagne casserole is cut into single-serving square portions.</p>
+            <section class="section">
+            <div class="container">
+                <h1 class="title">Lasagna Recipe</h1>
+                <p><em>Feel like you just been invited from an authentic <b>Nonna</b> in her casa!</em><strong> A cosy and easy recipe for your palate, with simple oven and store-bought lasagna sheets, you can make in <em>less than 2 hours</em> this recipe.</strong></p>
+            </div>
+            <br></br>
+            <div class="tile is-ancestor">
+                <div class="tile is-parent is-12">
+                    <article class="tile is-child notification box is-info">
+                        <div class="section">
+                            <div class="content">
+                                <h2 class="subtitle">Ingredients</h2>
+                                <ul>
+                                    <li>1 pound sweet Italian sausage</li>
+                                    <li>1 pound sweet Italian sausage</li>
+                                    <li>3/4 pound lean ground beef</li>
+                                    <li>1/2 cup minced onion</li>
+                                    <li>2 cloves garlic, crushed</li>
+                                    <li>1 (28 ounce) can crushed tomatoes</li>
+                                    <li>2 (6 ounce) cans tomato paste</li>
+                                    <li>2 (6.5 ounce) cans canned tomato sauce</li>
+                                    <li>1/2 cup water</li>
+                                    <li>2 tablespoons white sugar</li>
+                                    <li>1 1/2 teaspoons dried basil leaves</li>
+                                    <li>1/2 teaspoon fennel seeds</li>
+                                    <li>1 teaspoon Italian seasoning</li>
+                                    <li>1 1/2 teaspoons salt, divided, or to taste</li>
+                                    <li>1/4 teaspoon ground black pepper</li>
+                                    <li>4 tablespoons chopped fresh parsley</li>
+                                    <li>12 lasagna noodles</li>
+                                    <li>16 ounces ricotta cheese</li>
+                                    <li>1 egg</li>
+                                    <li>3/4 pound mozzarella cheese, sliced</li>
+                                    <li>3/4 cup grated Parmesan cheese</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="tile is-child is-8 box">
+                        <div class="section">
+                            <h2 class="subtitle">Steps</h2>
+                            <ol>
+                                <li>In a Dutch oven, cook sausage, ground beef, onion, and garlic over medium heat until well browned. Stir in crushed tomatoes, tomato paste, tomato sauce, and water. Season with sugar, basil, fennel seeds, Italian seasoning, 1 teaspoon salt, pepper, and 2 tablespoons parsley. Simmer, covered, for about 1 1/2 hours, stirring occasionally.</li>
+                                <li>Bring a large pot of lightly salted water to a boil. Cook lasagna noodles in boiling water for 8 to 10 minutes. Drain noodles, and rinse with cold water. In a mixing bowl, combine ricotta cheese with egg, remaining parsley, and 1/2 teaspoon salt.</li>
+                                <li>Preheat oven to 375 degrees F (190 degrees C).</li>
+                                <li>To assemble, spread 1 1/2 cups of meat sauce in the bottom of a 9x13 inch baking dish. Arrange 6 noodles lengthwise over meat sauce. Spread with one half of the ricotta cheese mixture. Top with a third of mozzarella cheese slices. Spoon 1 1/2 cups meat sauce over mozzarella, and sprinkle with 1/4 cup Parmesan cheese. Repeat layers, and top with remaining mozzarella and Parmesan cheese. Cover with foil: to prevent sticking, either spray foil with cooking spray, or make sure the foil does not touch the cheese.</li>
+                                <li>Bake in preheated oven for 25 minutes. Remove foil, and bake an additional 25 minutes. Cool for 15 minutes before serving.</li>
+                            </ol>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="content">
+                <h2 class="subtitle">Hungry for more?</h2>
+                <ul>
+                    <li><a href="./chicken-stir-fry.html"><span class="icon"><i class="fas fa-drumstick-bite"></i></span> Chicken Stir-Fry</a></li>
+                    <li><a href="./greek-salad.html"><span class="icon"><i class="fas fa-leaf"></i></span> Greek Salad</a></li>
+                    <li><a href="./cookies.html"><span class="icon"><i class="fas fa-cookie"></i></span> Chocolate Chip Cookies</a></li>
+                    <li><a href="./pizza.html"><span class="icon"><i class="fas fa-pizza-slice"></i></span> Pizza</a></li>
+                </ul>
+            </div>
+        </section>
+        <script>
+            // JavaScript for the dropdown menu
+            document.addEventListener('DOMContentLoaded', function () {
+                // Get the "navbar-burger" element
+                const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+                if ($navbarBurgers.length > 0) {
+                    $navbarBurgers.forEach(el => {
+                        el.addEventListener('click', () => {
+                            const target = el.dataset.target;
+                            const $target = document.getElementById(target);
+                            el.classList.toggle('is-active');
+                            $target.classList.toggle('is-active');
+                        });
+                    });
+                }
+        
+                // Change navbar color on scroll
+                const navbar = document.querySelector('.navbar');
+                const hero = document.querySelector('.hero');
+        
+                window.addEventListener('scroll', () => {
+                    const scrollPosition = window.scrollY;
+        
+                    if (scrollPosition > hero.offsetHeight) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            });
+        </script>
+        <script>
+            // JavaScript for the navbar background change on scroll
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 80) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        </script>
+    <footer class="footer is-fullwidth ">
+        <div class="columns">
+            <div class="column"> <a href="https://bulma.io">
+            <img
+              src="https://bulma.io/images/made-with-bulma.png"
+              alt="Made with Bulma"
+              width="256"
+              height="48">
+          </a></div>
+        <div class="column is-5 is-offset-5">
+            <p>&copy; 2023 Odin Recipes & Andrea Maestri. All rights reserved.</p>
+            <p>Styled with <a href="https://bulma.io">Bulma</a> and powered by <a href="https://github.com/features/copilot">GitHub Copilot</a>.</p>
+        </div>
+    </footer>
+    </body>
+    </html>
